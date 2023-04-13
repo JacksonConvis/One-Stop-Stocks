@@ -28,4 +28,8 @@ export class StockAPIService {
     return this.http.get<Favorite[]>(`${this.faveURL}`);
   };
 
+  removeFave(ticker: string): Observable<void> {
+    return this.http.delete<void>(`${this.faveURL}/${ticker}`);
+  };
+
 }

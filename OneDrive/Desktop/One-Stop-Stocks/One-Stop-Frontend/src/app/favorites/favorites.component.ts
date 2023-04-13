@@ -24,4 +24,10 @@ export class FavoritesComponent {
     });
    
   };
+
+  deleteFave(fave: Favorite): void{
+
+    this.api.removeFave(fave.ticker).subscribe(() => 
+    this.loadFaves());
+    };
 }

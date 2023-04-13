@@ -47,10 +47,10 @@ public List<Favorite> getAll() {
 	}
 	
 	// CRU(D) -- Delete
-	@DeleteMapping("/favorites/{id}")
+	@DeleteMapping("/favorites/{ticker}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable("id") Long id) {
-		repo.deleteById(id);
+	public void delete(@PathVariable("ticker") String ticker) {
+		repo.deleteByTicker(ticker);
 	}
 	
 	// CR(U)D -- Update

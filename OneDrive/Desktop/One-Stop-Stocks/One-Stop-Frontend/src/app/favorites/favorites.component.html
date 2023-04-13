@@ -1,5 +1,7 @@
 
 
-<li *ngFor="let f of faves">
-    {{f.ticker}}
+<li *ngFor="let f of faves; let i = index">
+    {{f.ticker}} 
+    {{f.id}}  
+    <button  (click)="deleteFave(f)">Delete Favorites</button> 
 </li>
