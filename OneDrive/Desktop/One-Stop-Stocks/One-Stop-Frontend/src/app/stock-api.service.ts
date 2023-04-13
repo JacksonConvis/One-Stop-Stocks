@@ -23,4 +23,9 @@ export class StockAPIService {
   addFavorite(newFave: Favorite): Observable<Favorite> {
     return this.http.post<Favorite>(`${this.faveURL}`, newFave);
   };
+
+  getAllFave(): Observable<Favorite[]> {
+    return this.http.get<Favorite[]>(`${this.faveURL}`);
+  };
+
 }

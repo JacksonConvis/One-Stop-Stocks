@@ -10,6 +10,7 @@ import { Favorite } from '../favorite';
 })
 export class ListOfStocksComponent {
   stocks: Stock[] = [];
+  fave: Favorite = ({} as any) as Favorite;
 
   constructor(private api: StockAPIService) {}
   

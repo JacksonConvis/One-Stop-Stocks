@@ -1,6 +1,6 @@
 <p>list-of-stocks works!</p>
 
 <li *ngFor="let s of stocks">
-    {{s.ticker}}
+    {{s.ticker}} <button (click)="makeFavorite(s, fave)">Mark as favorite</button> 
 
 </li>

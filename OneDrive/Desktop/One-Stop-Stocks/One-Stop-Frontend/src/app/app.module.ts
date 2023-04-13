@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ListOfStocksComponent } from './list-of-stocks/list-of-stocks.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 
@@ -13,6 +14,7 @@ import { ListOfStocksComponent } from './list-of-stocks/list-of-stocks.component
   declarations: [
     AppComponent,
     ListOfStocksComponent,
+    FavoritesComponent,
  
   ],
   imports: [BrowserModule, HttpClientModule],
