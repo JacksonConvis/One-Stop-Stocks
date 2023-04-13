@@ -11,7 +11,6 @@ import javax.persistence.Table;
 public class Favorite {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 	
 	public int no_of_comments;
 
@@ -23,9 +22,8 @@ public class Favorite {
 
     public Favorite() {}
     
-	public Favorite(int no_of_comments, String sentiment, double sentiment_score, String ticker, Long id) {
+	public Favorite(int no_of_comments, String sentiment, double sentiment_score, String ticker) {
 		super();
-		this.id = id;
 		this.no_of_comments = no_of_comments;
 		this.sentiment = sentiment;
 		this.sentiment_score = sentiment_score;

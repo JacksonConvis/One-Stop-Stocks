@@ -3,5 +3,6 @@ export interface Stock{
     sentiment: string;
     sentiment_score: number;
     ticker: string;
+    id?:number;
 
 }

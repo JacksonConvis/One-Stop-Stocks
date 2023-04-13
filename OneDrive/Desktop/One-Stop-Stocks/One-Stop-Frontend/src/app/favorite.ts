@@ -1,5 +1,5 @@
 export interface Favorite{
-    id: number;
+    id?: number;
     no_of_comments: number;
     sentiment: string;
     sentiment_score: number;
