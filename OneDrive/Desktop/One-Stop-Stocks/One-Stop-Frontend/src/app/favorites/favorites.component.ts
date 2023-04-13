@@ -21,13 +21,15 @@ export class FavoritesComponent {
       
     this.api.getAllFave().subscribe((data: Favorite[]) => {
       this.faves = data;
+      console.log(this.faves);
     });
+    
    
   };
 
-  deleteFave(fave: Favorite): void{
+  deleteFave(id: number): void{
 
-    this.api.removeFave(fave.ticker).subscribe(() => 
+    this.api.removeFave(id).subscribe(() => 
     this.loadFaves());
     };
 }

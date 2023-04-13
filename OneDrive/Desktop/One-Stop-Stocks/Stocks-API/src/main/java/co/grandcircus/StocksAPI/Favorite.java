@@ -23,8 +23,9 @@ public class Favorite {
 
     public Favorite() {}
     
-	public Favorite(int no_of_comments, String sentiment, double sentiment_score, String ticker) {
+	public Favorite(int no_of_comments, String sentiment, double sentiment_score, String ticker, Long id) {
 		super();
+		this.id = id;
 		this.no_of_comments = no_of_comments;
 		this.sentiment = sentiment;
 		this.sentiment_score = sentiment_score;

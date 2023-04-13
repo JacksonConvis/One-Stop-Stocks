@@ -53,6 +53,12 @@ public List<Favorite> getAll() {
 		repo.deleteByTicker(ticker);
 	}
 	
+	@DeleteMapping("/favorites/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable("id") Long id) {
+		repo.deleteById(id);
+	}
+	
 	// CR(U)D -- Update
 	//@PutMapping("/books/{id}")
 	//public Book update(@PathVariable("id") Long id,
