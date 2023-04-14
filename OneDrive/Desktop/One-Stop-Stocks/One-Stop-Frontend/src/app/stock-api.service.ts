@@ -13,11 +13,16 @@ export class StockAPIService {
   // ^ this points to spring boot api backend
   stockURL: string = this.Url + "/stocks";
   faveURL: string = this.Url + "/favorites";
+  yesterdayURL: string = this.Url +"/stocks/yesterday";
 
   constructor(private http: HttpClient) {}
 
   getAllStocks(): Observable<Stock[]> {
     return this.http.get<Stock[]>(`${this.stockURL}`);
+  };
+
+  getYesterday(): Observable<Stock[]> {
+    return this.http.get<Stock[]>(`${this.yesterdayURL}`);
   };
 
   addFavorite(newFave: Favorite): Observable<Favorite> {

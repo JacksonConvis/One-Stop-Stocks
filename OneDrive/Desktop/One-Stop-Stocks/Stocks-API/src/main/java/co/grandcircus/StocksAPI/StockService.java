@@ -13,6 +13,8 @@ public class StockService {
 	private RestTemplate template = new RestTemplate();
 	LocalDate today = java.time.LocalDate.now();
 	
+	LocalDate yesterday = today.minusDays(1);
+	
 
 	public Stock[] getStocks() {
 
@@ -23,5 +25,16 @@ public class StockService {
 		return response;
 
 	}
+	
+	public Stock[] getYesterday() {
+
+		String url = "https://tradestie.com/api/v1/apps/reddit?date=" + yesterday;
+
+		Stock[] response = template.getForObject(url, Stock[].class);
+
+		return response;
+
+	}
+	
 
 }

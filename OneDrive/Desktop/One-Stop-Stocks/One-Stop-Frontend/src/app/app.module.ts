@@ -6,13 +6,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ListOfStocksComponent } from './list-of-stocks/list-of-stocks.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { YesterdayStocksComponent } from './yesterday-stocks/yesterday-stocks.component';
 
 
 const routes: Routes = [
   {path: '' , redirectTo: 'AppComponent', pathMatch: 'full'},
   { path: 'faves', component: FavoritesComponent },
   { path: 'stocks', component: ListOfStocksComponent },
- // { path: 'add', component: AddEventComponent },
+  { path: 'yesterday', component: YesterdayStocksComponent },
   
 ];
 
@@ -21,6 +22,7 @@ const routes: Routes = [
     AppComponent,
     ListOfStocksComponent,
     FavoritesComponent,
+    YesterdayStocksComponent,
  
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes)],

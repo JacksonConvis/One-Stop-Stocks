@@ -30,6 +30,11 @@ public class StockAPIController {
     public Stock[] readAll(){
         return api.getStocks();
     }
+    
+    @GetMapping("/stocks/yesterday")
+    public Stock[] readAllY(){
+        return api.getYesterday();
+    }
 
     @GetMapping("/favorites")
     public List<Favorite> getAll() {
