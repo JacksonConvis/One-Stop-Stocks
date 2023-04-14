@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Stock } from '../Stock';
-import { StockAPIService } from '../stock-api.service';
-import { Favorite } from '../favorite';
+import { Stock } from '../interfaces/Stock';
+import { StockAPIService } from './services/stock-api.service';
+import { Favorite } from '../interfaces/favorite';
 
 @Component({
   selector: 'app-list-of-stocks',
@@ -11,6 +11,7 @@ import { Favorite } from '../favorite';
 export class ListOfStocksComponent {
   stocks: Stock[] = [];
   fave: Favorite = ({} as any) as Favorite;
+  eD: Stock | undefined; 
 
   constructor(private api: StockAPIService) {}
   
@@ -27,6 +28,12 @@ export class ListOfStocksComponent {
       });
      
     };
+
+    showDetails(i: number){
+
+      this.eD = this.stocks.at(i);
+     };
+
 
     makeFavorite(stock: Stock, fave: Favorite){
       fave.ticker = stock.ticker;   

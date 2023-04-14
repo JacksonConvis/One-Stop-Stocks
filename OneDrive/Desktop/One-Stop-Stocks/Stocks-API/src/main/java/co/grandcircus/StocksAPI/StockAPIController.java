@@ -54,4 +54,6 @@ public class StockAPIController {
     public void delete(@PathVariable("ticker") String ticker) {
         repo.deleteByTicker(ticker);
     }
+
+    
 }

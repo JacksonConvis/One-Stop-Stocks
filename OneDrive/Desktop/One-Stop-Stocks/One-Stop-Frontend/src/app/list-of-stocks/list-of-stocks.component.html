@@ -1,6 +1,11 @@
 
 
-<li *ngFor="let s of stocks">
-    {{s.ticker}} <button (click)="makeFavorite(s, fave)">Mark as favorite</button> 
-
-</li>
+<ul>
+    <li *ngFor="let s of stocks; let i = index">
+      {{s.ticker}}
+      <button (click)="makeFavorite(s, fave)">Mark as favorite</button> 
+      <button (click)="showDetails(i+1)">Show Details</button>
+    </li>
+  </ul>
+  
+  <p>{{eD?.sentiment}}</p>

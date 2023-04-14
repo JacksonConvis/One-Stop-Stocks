@@ -1,7 +1,11 @@
-
+<p>Stock: {{eD?.ticker}}</p>
+<p>Sentiment: {{eD?.sentiment}}</p>
+<p>Comments: {{eD?.no_of_comments}}</p>
+<p>Seniment Score: {{eD?.sentiment_score}}</p>
 
 <li *ngFor="let f of faves; let i = index">
     {{f.ticker}} 
     {{f.id}}  
     <button  (click)="deleteFave(f)">Delete Favorites</button> 
+    <button (click)="showDetails(i)">Show Details</button>
 </li>

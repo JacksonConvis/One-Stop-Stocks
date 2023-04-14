@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { StockAPIService } from '../stock-api.service';
-import { Favorite } from '../favorite';
+import { StockAPIService } from '../list-of-stocks/services/stock-api.service';
+import { Favorite } from '../interfaces/favorite';
+import { Stock } from '../interfaces/Stock';
 
 @Component({
   selector: 'app-favorites',
@@ -9,6 +10,7 @@ import { Favorite } from '../favorite';
 })
 export class FavoritesComponent {
   faves: Favorite[] = [];
+  eD: Stock | undefined;
   constructor(private api: StockAPIService) {}
 
   ngOnInit(): void {
@@ -24,6 +26,14 @@ export class FavoritesComponent {
     });
    
   };
+
+  showDetails(i: number){
+
+    this.eD = this.faves.at(i);
+   };
+
+
+
 
   deleteFave(fave: Favorite): void{
 
