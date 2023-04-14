@@ -14,6 +14,7 @@ export class StockAPIService {
   stockURL: string = this.Url + "/stocks";
   faveURL: string = this.Url + "/favorites";
   yesterdayURL: string = this.Url +"/stocks/yesterday";
+  lastWeekURL: string = this.Url +"/stocks/lastweek";
 
   constructor(private http: HttpClient) {}
 
@@ -24,6 +25,11 @@ export class StockAPIService {
   getYesterday(): Observable<Stock[]> {
     return this.http.get<Stock[]>(`${this.yesterdayURL}`);
   };
+
+  getLastWeek(): Observable<Stock[]> {
+    return this.http.get<Stock[]>(`${this.lastWeekURL}`);
+  }
+
 
   addFavorite(newFave: Favorite): Observable<Favorite> {
     return this.http.post<Favorite>(`${this.faveURL}`, newFave);

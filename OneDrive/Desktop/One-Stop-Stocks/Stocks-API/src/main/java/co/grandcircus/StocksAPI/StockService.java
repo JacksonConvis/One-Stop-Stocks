@@ -15,6 +15,8 @@ public class StockService {
 	
 	LocalDate yesterday = today.minusDays(1);
 	
+	LocalDate lastWeek = today.minusWeeks(1);
+	
 
 	public Stock[] getStocks() {
 
@@ -29,6 +31,16 @@ public class StockService {
 	public Stock[] getYesterday() {
 
 		String url = "https://tradestie.com/api/v1/apps/reddit?date=" + yesterday;
+
+		Stock[] response = template.getForObject(url, Stock[].class);
+
+		return response;
+
+	}
+	
+	public Stock[] getLastWeek() {
+
+		String url = "https://tradestie.com/api/v1/apps/reddit?date=" + lastWeek;
 
 		Stock[] response = template.getForObject(url, Stock[].class);
 

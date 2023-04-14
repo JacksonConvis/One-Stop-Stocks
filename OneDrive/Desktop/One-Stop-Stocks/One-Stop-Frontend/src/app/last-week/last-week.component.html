@@ -4,11 +4,12 @@
 <p>Members Discussing {{eD?.ticker}}: {{eD?.no_of_comments}}</p>    <!-- Reddit Members discussing count-->
 <p>Sentiment Score: {{eD?.sentiment_score}}</p>  <!-- WallStreetBets Rating out of 1 -->
 
-<h3 style="color: gold;">Your Favorite's List</h3>
-
-<li *ngFor="let f of faves; let i = index">
-    {{f.ticker}} 
-    {{f.id}}  
-    <button  (click)="deleteFave(f)">Delete Favorites</button> 
-    <button (click)="showDetails(i)">Show Details</button>
-</li>
+<h3 style="color: gold;">50 hottest stocks of last week </h3>
+<ul>
+    <li *ngFor="let s of stocks; let i = index">
+      {{s.ticker}}
+      <button (click)="makeFavorite(s, fave)">Mark as favorite</button> 
+      <button (click)="showDetails(i)">Show Details</button>
+    </li>
+  </ul>
+  

@@ -35,6 +35,12 @@ public class StockAPIController {
     public Stock[] readAllY(){
         return api.getYesterday();
     }
+    
+    @GetMapping("/stocks/lastweek")
+    public Stock[] readAllLw(){
+        return api.getLastWeek();
+    }
+    
 
     @GetMapping("/favorites")
     public List<Favorite> getAll() {
