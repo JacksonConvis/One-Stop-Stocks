@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { StockAPIService } from '../list-of-stocks/services/stock-api.service';
 import { Stock } from '../interfaces/Stock';
 import { Favorite } from '../interfaces/favorite';
-import { Chart } from 'chart.js';
+//import { Chart } from 'chart.js';
 
 
 @Component({
@@ -10,9 +10,9 @@ import { Chart } from 'chart.js';
   templateUrl: './stock-chart.component.html',
   styleUrls: ['./stock-chart.component.css']
 })
-export class StockChartComponent implements OnInit, AfterViewInit {
+export class StockChartComponent implements OnInit {
 
-  private myChart: Chart | null = null;
+  //private myChart: Chart | null = null;
 
   stocks: Stock[] = [];
   favorites: Favorite[] = [];
@@ -60,26 +60,26 @@ export class StockChartComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngAfterViewInit() {
-    const canvas = document.getElementById('myChart') as HTMLCanvasElement;
-    const ctx = canvas.getContext('2d');
-    if (ctx) {
-      const myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['Today', 'Yesterday', 'last Week'],
-          datasets: [{
-            label: 'My First Dataset',
-            data: [65, 59, 80, 81, 56, 55, 40],
-            fill: false,
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1
-          }]
-        }
-      });
-    } else {
-      console.log('Canvas element not found');
-    }
-  }
+ // ngAfterViewInit() {
+ //   const canvas = document.getElementById('myChart') as HTMLCanvasElement;
+ ///   const ctx = canvas.getContext('2d');
+ //   if (ctx) {
+  //    const myChart = new Chart(ctx, {
+  //      type: 'line',
+   //     data: {
+  //        labels: ['Today', 'Yesterday', 'last Week'],
+  //        datasets: [{
+  //          label: 'My First Dataset',
+  //          data: [65, 59, 80, 81, 56, 55, 40],
+  //          fill: false,
+  //          borderColor: 'rgb(75, 192, 192)',
+  //          tension: 0.1
+  //        }]
+  //      }
+  //    });
+ //   } else {
+ //     console.log('Canvas element not found');
+ //   }
+//  }
 }
   
