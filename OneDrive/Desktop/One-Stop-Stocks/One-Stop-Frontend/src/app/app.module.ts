@@ -8,6 +8,7 @@ import { ListOfStocksComponent } from './list-of-stocks/list-of-stocks.component
 import { FavoritesComponent } from './favorites/favorites.component';
 import { YesterdayStocksComponent } from './yesterday-stocks/yesterday-stocks.component';
 import { LastWeekComponent } from './last-week/last-week.component';
+import { StockChartComponent } from './stock-chart/stock-chart.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,9 @@ const routes: Routes = [
   { path: 'faves', component: FavoritesComponent },
   { path: 'stocks', component: ListOfStocksComponent },
   { path: 'yesterday', component: YesterdayStocksComponent },
-  {path: 'lastweek', component: LastWeekComponent}
+  {path: 'lastweek', component: LastWeekComponent},
+  { path: 'stock-chart', component: StockChartComponent }
+
   
 ];
 
@@ -26,6 +29,7 @@ const routes: Routes = [
     FavoritesComponent,
     YesterdayStocksComponent,
     LastWeekComponent,
+    StockChartComponent,
  
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes)],
