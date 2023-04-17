@@ -1,18 +1,18 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { StockAPIService } from '../list-of-stocks/services/stock-api.service';
 import { Stock } from '../interfaces/Stock';
 import { Favorite } from '../interfaces/favorite';
-//import { Chart } from 'chart.js';
-
+import { Chart, registerables } from 'chart.js';
 
 @Component({
   selector: 'app-stock-chart',
   templateUrl: './stock-chart.component.html',
   styleUrls: ['./stock-chart.component.css']
 })
-export class StockChartComponent implements OnInit {
+export class StockChartComponent implements OnInit, AfterViewInit {
 
-  //private myChart: Chart | null = null;
+  @ViewChild('myChart')
+  myChart!: ElementRef;
 
   stocks: Stock[] = [];
   favorites: Favorite[] = [];
@@ -20,12 +20,15 @@ export class StockChartComponent implements OnInit {
 
   constructor(private api: StockAPIService) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.api.getAllStocks().subscribe((data: Stock[]) => {
       this.stocks = data;
       this.top50 = this.getTop50();
+      this.createLineChart();
     });
+  }
 
+  ngOnInit(): void {
     this.api.getAllFave().subscribe((data: Favorite[]) => {
       this.favorites = data;
     });
@@ -60,26 +63,32 @@ export class StockChartComponent implements OnInit {
     }
   }
 
- // ngAfterViewInit() {
- //   const canvas = document.getElementById('myChart') as HTMLCanvasElement;
- ///   const ctx = canvas.getContext('2d');
- //   if (ctx) {
-  //    const myChart = new Chart(ctx, {
-  //      type: 'line',
-   //     data: {
-  //        labels: ['Today', 'Yesterday', 'last Week'],
-  //        datasets: [{
-  //          label: 'My First Dataset',
-  //          data: [65, 59, 80, 81, 56, 55, 40],
-  //          fill: false,
-  //          borderColor: 'rgb(75, 192, 192)',
-  //          tension: 0.1
-  //        }]
-  //      }
-  //    });
- //   } else {
- //     console.log('Canvas element not found');
- //   }
-//  }
+  createLineChart(): void {
+    Chart.register(...registerables);
+
+    const labels: string[] = this.top50.map(s => s.ticker);
+    const data: number[] = this.top50.map(s => s.sentiment_score);
+
+    const chart = new Chart(this.myChart.nativeElement, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Sentiment Score',
+          data: data,
+          borderColor: 'blue',
+         
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Top 50 Stocks by Sentiment Score'
+          }
+        }
+      }
+    });
+  }
 }
-  

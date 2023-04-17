@@ -1,29 +1,36 @@
 <div class="container">
-    <h1>Top 50 Stocks</h1>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Ticker</th>
-          <th>Sentiment</th>
-          <th>Sentiment Score</th>
-          <th>No. of Comments</th>
-          <th>Favorite</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let stock of top50">
-          <td>{{ stock.ticker }}</td>
-          <td>{{ stock.sentiment }}</td>
-          <td>{{ stock.sentiment_score }}</td>
-          <td>{{ stock.no_of_comments }}</td>
-          <td>
-            <button class="btn btn-primary" (click)="toggleFavorite(stock)">
-              {{ isFavorited(stock.ticker) ? 'Remove Favorite' : 'Add Favorite' }}
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <canvas id="myChart" width="800" height="400" style="display: block; width: 100%;"></canvas>
+  <div class="grid-container">
+    <div class="table-container">
+      <h1>Top 50 Stocks</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Sentiment</th>
+            <th>Sentiment Score</th>
+            <th>No. of Comments</th>
+            <th>Favorite</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let stock of top50">
+            <td>{{ stock.ticker }}</td>
+            <td>{{ stock.sentiment }}</td>
+            <td>{{ stock.sentiment_score }}</td>
+            <td>{{ stock.no_of_comments }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="toggleFavorite(stock)">
+                {{ isFavorited(stock.ticker) ? 'Remove Favorite' : 'Add Favorite' }}
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="chart-container">
+      <canvas #myChart width="800" height="400"></canvas>
+    </div>
   </div>
-  
+</div>

@@ -1,0 +1,22 @@
+.container {
+    margin: 20px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .table-container {
+    overflow-y: scroll;
+    height: 400px;
+    grid-column: 1 / 2;
+  }
+  
+  .chart-container {
+    grid-column: 2 / 3;
+  }
+  
+
+  

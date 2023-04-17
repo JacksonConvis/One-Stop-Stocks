@@ -1,10 +1,10 @@
-<h2 style="color: green;">Stock Details</h2>
+<h2 id="stock-details">Stock Details</h2>
 <p>Stock: {{eD?.ticker}}</p>    <!-- Stock Symbol-->
 <p>Overall Census: {{eD?.sentiment}}</p> <!-- speculation on whether a stock will go up or down -->
 <p>Members Discussing {{eD?.ticker}}: {{eD?.no_of_comments}}</p>    <!-- Reddit Members discussing count-->
 <p>Sentiment Score: {{eD?.sentiment_score}}</p>  <!-- WallStreetBets Rating out of 1 -->
 
-<h3 style="color: gold;">50 hottest stocks updated daily</h3>
+<h3 id="hottest-stocks">50 hottest stocks updated daily</h3>
 <ul>
     <li *ngFor="let s of stocks; let i = index">
       {{s.ticker}}
