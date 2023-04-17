@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,10 +10,12 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { YesterdayStocksComponent } from './yesterday-stocks/yesterday-stocks.component';
 import { LastWeekComponent } from './last-week/last-week.component';
 import { StockChartComponent } from './stock-chart/stock-chart.component';
+import { UserComponent } from './user/user.component';
 
 
 const routes: Routes = [
   {path: '' , redirectTo: 'AppComponent', pathMatch: 'full'},
+  { path: 'user', component: UserComponent },
   { path: 'faves', component: FavoritesComponent },
   { path: 'stocks', component: ListOfStocksComponent },
   { path: 'yesterday', component: YesterdayStocksComponent },
@@ -30,9 +33,10 @@ const routes: Routes = [
     YesterdayStocksComponent,
     LastWeekComponent,
     StockChartComponent,
+    UserComponent,
  
   ],
-  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes),IonicModule.forRoot()],
   exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StockAPIService } from '../list-of-stocks/services/stock-api.service';
+import { StockAPIService } from '../services/stock-api.service';
 import { Favorite } from '../interfaces/favorite';
 import { Stock } from '../interfaces/Stock';
 

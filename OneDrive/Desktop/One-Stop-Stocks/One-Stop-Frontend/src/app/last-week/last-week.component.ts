@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Stock } from '../interfaces/Stock';
 import { Favorite } from '../interfaces/favorite';
-import { StockAPIService } from '../list-of-stocks/services/stock-api.service';
+import { StockAPIService } from '../services/stock-api.service';
 
 @Component({
   selector: 'app-last-week',
