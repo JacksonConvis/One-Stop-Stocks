@@ -6,21 +6,32 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="login")
-public class Login {
+@Table(name="user")
+public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long id;
 	
 	public String username;
 
     public String password;
 
-	public Login() {}
+	public User() {}
 	
-	public Login(String username, String password) {
+	public User(String username, String password, Long id) {
 		super();
 		this.username = username;
 		this.password = password;
+		this.id = id;
+	}
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getUsername() {

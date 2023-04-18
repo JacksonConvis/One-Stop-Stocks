@@ -36,7 +36,7 @@ const routes: Routes = [
     UserComponent,
  
   ],
-  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes),IonicModule.forRoot()],
+  imports: [BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(routes),IonicModule.forRoot()],
   exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]

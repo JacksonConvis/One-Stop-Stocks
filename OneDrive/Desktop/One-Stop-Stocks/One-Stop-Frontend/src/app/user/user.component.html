@@ -1,21 +1,37 @@
-
-<div class="screen-1">
-   
+<!--
+  <div class="screen-1">
+  <form (ngSubmit)="onSubmit()">
     <div class="email">
-      <label for="email">Email Address</label>
+      <label for="username">Username</label>
       <div class="sec-2">
         <ion-icon name="mail-outline"></ion-icon>
-        <input type="email" name="email" placeholder="Username here.."/>
+        <input type="text" name="username" [(ngModel)]="newUser.username" placeholder="Username here.."/>
       </div>
     </div>
     <div class="password">
       <label for="password">Password</label>
       <div class="sec-2">
         <ion-icon name="lock-closed-outline"></ion-icon>
-        <input class="pas" type="password" name="password" placeholder="············"/>
+        <input class="pas" type="password" name="password" placeholder="············" [(ngModel)]="newUser.password"/>
         <ion-icon class="show-hide" name="eye-outline"></ion-icon>
       </div>
     </div>
-    <button class="login">Login</button>
+    <button class="login" type="submit">Login</button>
     <div class="footer"><span>Sign up</span><span>Forgot Password?</span></div>
-  </div>
+ </form> 
+ -->
+
+
+
+   <form (ngSubmit)="onSubmit()">
+    <label>
+      Username:
+    <input type="text" name="username" [(ngModel)]="newUser.username">
+      </label>
+    <label>
+      Password:
+      <input type="text" name="description" [(ngModel)]="newUser.password">
+    </label>
+ 
+    <button type="submit">Log in</button>
+  </form>

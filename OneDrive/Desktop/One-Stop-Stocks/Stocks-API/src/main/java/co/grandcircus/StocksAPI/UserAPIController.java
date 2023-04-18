@@ -16,19 +16,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin 
-public class LoginAPIController {
+public class	UserAPIController {
 
     @Autowired
-    private LoginRepository repo;
+    private UserRepository repo;
 
     @GetMapping("/users")
-    public List<Login> readAll(){
+    public List<User> readAll(){
         return repo.findAll();
     }
     
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.CREATED)
-    public Login create(@RequestBody Login user) {
+    public User create(@RequestBody User user) {
         repo.save(user);
         return user;
     }
