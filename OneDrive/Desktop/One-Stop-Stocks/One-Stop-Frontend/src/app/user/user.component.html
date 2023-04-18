@@ -1,25 +1,65 @@
-<!--
-  <div class="screen-1">
-  <form (ngSubmit)="onSubmit()">
-    <div class="email">
-      <label for="username">Username</label>
-      <div class="sec-2">
-        <ion-icon name="mail-outline"></ion-icon>
-        <input type="text" name="username" [(ngModel)]="newUser.username" placeholder="Username here.."/>
-      </div>
-    </div>
-    <div class="password">
-      <label for="password">Password</label>
-      <div class="sec-2">
-        <ion-icon name="lock-closed-outline"></ion-icon>
-        <input class="pas" type="password" name="password" placeholder="············" [(ngModel)]="newUser.password"/>
-        <ion-icon class="show-hide" name="eye-outline"></ion-icon>
-      </div>
-    </div>
-    <button class="login" type="submit">Login</button>
-    <div class="footer"><span>Sign up</span><span>Forgot Password?</span></div>
- </form> 
- -->
+
+	<a href="https://front.codes/" class="logo" target="_blank">
+		<img src="https://assets.codepen.io/1462889/fcy.png" alt="">
+	</a>
+
+	<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+						<h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+			          	<label for="reg-log"></label>
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h4 class="mb-4 pb-3">Log In</h4>
+											<div class="form-group">
+												<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+												<i class="input-icon uil uil-at"></i>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<a href="#" class="btn mt-4">submit</a>
+                            				<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+				      					</div>
+			      					</div>
+			      				</div>
+								<div class="card-back">
+									<div class="center-wrap">
+										<div class="section text-center">
+                                            <form (ngSubmit)="onSubmit()">
+											<h4 class="mb-4 pb-3">Sign Up</h4>
+											<div class="form-group">
+												<input type="text" name="username" class="form-style" placeholder="Username" id="logname" [(ngModel)]="newUser.username" autocomplete="off">
+												<i class="input-icon uil uil-user"></i>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="email" name="description" class="form-style" placeholder="Password" id="logemail" [(ngModel)]="newUser.password"autocomplete="off">
+												<i class="input-icon uil uil-at"></i>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="password" name="logpass" class="form-style" placeholder="Confirm Password" id="logpass" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+								
+                                            <button type="submit" class="btn mt-4">Log in</button>
+                                            </form>
+				      					</div>
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+	    </div>
+	</div>
 
 
 
