@@ -11,6 +11,7 @@ import { YesterdayStocksComponent } from './yesterday-stocks/yesterday-stocks.co
 import { LastWeekComponent } from './last-week/last-week.component';
 import { StockChartComponent } from './stock-chart/stock-chart.component';
 import { UserComponent } from './user/user.component';
+import { ListOfUsersComponent } from './list-of-users/list-of-users.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'faves', component: FavoritesComponent },
   { path: 'stocks', component: ListOfStocksComponent },
   { path: 'yesterday', component: YesterdayStocksComponent },
-  {path: 'lastweek', component: LastWeekComponent},
+  {path: 'lastweek', component: LastWeekComponent}, 
+  {path: 'user-list', component: ListOfUsersComponent},
   { path: 'stock-chart', component: StockChartComponent }
 
   
@@ -34,6 +36,7 @@ const routes: Routes = [
     LastWeekComponent,
     StockChartComponent,
     UserComponent,
+    ListOfUsersComponent,
  
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(routes),IonicModule.forRoot()],

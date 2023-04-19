@@ -1,0 +1,13 @@
+<p>list-of-users works!</p>
+<li *ngFor="let u of users; let i = index">
+    {{u.id}} {{u.username}}
+
+  </li>
+
+  <form (ngSubmit)="updateUser(UserOne)">
+    <input type="number" name="id" placeholder="id" [(ngModel)]="UserOne.id">
+    <input type="text" name="username" placeholder="Username" required="" [(ngModel)]="UserOne.username">
+    <input type="password" name="description" placeholder="Password" required="" [(ngModel)]="UserOne.password">
+    <input type="password" name="pswd" placeholder="Confirm Password" required="">
+    <button type="submit">Update Credentials</button>
+</form>
