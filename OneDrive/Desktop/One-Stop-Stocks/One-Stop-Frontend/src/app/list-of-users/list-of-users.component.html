@@ -1,8 +1,10 @@
-<p>list-of-users works!</p>
+<h3>Users Browsing Stocks</h3>
 <li *ngFor="let u of users; let i = index">
-    {{u.id}} {{u.username}}
+  Id: {{u.id}} Username: {{u.username}}
 
   </li>
+
+<h3>Misspelled Something? Update your information down below!</h3>
 
   <form (ngSubmit)="updateUser(UserOne)">
     <input type="number" name="id" placeholder="id" [(ngModel)]="UserOne.id">
