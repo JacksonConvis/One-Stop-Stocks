@@ -1,17 +1,20 @@
-<h2 style="color: green;">Stock Details</h2>
-<p>Stock: {{eD?.ticker}}</p>    <!-- Stock Symbol-->
-<p>Overall Census: {{eD?.sentiment}}</p> <!-- speculation on whether a stock will go up or down -->
-<p>Members Discussing {{eD?.ticker}}: {{eD?.no_of_comments}}</p>    <!-- Reddit Members discussing count-->
-<p>Sentiment Score: {{eD?.sentiment_score}}</p>  <!-- WallStreetBets Rating out of 1 -->
+<body>
+  <div class="stock-details">
+    <h2>Yesterday's Stock Details</h2>
+    <p><strong>Stock:</strong> {{eD?.ticker}}</p>
+    <p><strong>Overall Sentiment:</strong> {{eD?.sentiment}}</p>
+    <p><strong>Members Discussing {{eD?.ticker}}:</strong> {{eD?.no_of_comments}}</p>
+    <p><strong>Sentiment Score:</strong> {{eD?.sentiment_score}}</p>
+  </div>
 
-<h3 style="color: gold;">50 hottest stocks from yesterday</h3>
-
-<ul>
-  <li *ngFor="let s of stocks; let i = index">
-    {{s.ticker}}
-    <button (click)="makeFavorite(s, fave)">Mark as favorite</button> 
-    <button (click)="showDetails(i)">Show Details</button>
-  </li>
-</ul>
-
-
+  <div class="hottest-stocks">
+    <h3>50 Hottest Stocks of Yesterday</h3>
+    <ul>
+      <li *ngFor="let s of stocks; let i = index">
+        <span class="ticker">{{s.ticker}}</span>
+        <button (click)="makeFavorite(s, fave)">Mark as Favorite</button> 
+        <button (click)="showDetails(i)">Show Details</button>
+      </li>
+    </ul>
+  </div>
+</body>

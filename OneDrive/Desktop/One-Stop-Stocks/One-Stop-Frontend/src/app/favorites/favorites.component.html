@@ -1,14 +1,20 @@
-<h2 style="color: green;">Stock Details</h2>
-<p>Stock: {{eD?.ticker}}</p>    <!-- Stock Symbol-->
-<p>Overall Census: {{eD?.sentiment}}</p> <!-- speculation on whether a stock will go up or down -->
-<p>Members Discussing {{eD?.ticker}}: {{eD?.no_of_comments}}</p>    <!-- Reddit Members discussing count-->
-<p>Sentiment Score: {{eD?.sentiment_score}}</p>  <!-- WallStreetBets Rating out of 1 -->
+<body>
+    <div class="stock-details">
+        <h2>Favorite's Details</h2>
+        <p><strong>Stock:</strong> {{eD?.ticker}}</p>
+        <p><strong>Overall Sentiment:</strong> {{eD?.sentiment}}</p>
+        <p><strong>Members Discussing {{eD?.ticker}}:</strong> {{eD?.no_of_comments}}</p>
+        <p><strong>Sentiment Score:</strong> {{eD?.sentiment_score}}</p>
+    </div>
 
-<h3 style="color: gold;">Your Favorite's List</h3>
-
-<li *ngFor="let f of faves; let i = index">
-    {{f.ticker}} 
-    {{f.id}}  
-    <button  (click)="deleteFave(f)">Delete Favorites</button> 
-    <button (click)="showDetails(i)">Show Details</button>
-</li>
+<div class="hottest-stocks">
+    <h3>Your Favorite's List</h3>
+    <ul>
+      <li *ngFor="let f of faves; let i = index">
+        <span class="ticker">{{f.ticker}}</span>
+        <button (click)="deleteFave(f)">Delete Favorites</button> 
+        <button (click)="showDetails(i)">Show Details</button>
+      </li>
+    </ul>
+  </div>
+</body>

@@ -76,16 +76,18 @@ export class StockChartComponent implements OnInit, AfterViewInit {
         datasets: [{
           label: 'Sentiment Score',
           data: data,
-          borderColor: 'blue',
-         
+          backgroundColor: 'orange', // set background color to a red with some transparency
+          borderColor: 'black', // set border color to the same shade of red
+          borderWidth: 2 // set border width to 1 pixel
         }]
       },
+      
       options: {
         responsive: true,
         plugins: {
           title: {
             display: true,
-            text: 'Top 50 Stocks by Sentiment Score'
+            text: 'Top 50 Stocks by User Rating'
           }
         }
       }

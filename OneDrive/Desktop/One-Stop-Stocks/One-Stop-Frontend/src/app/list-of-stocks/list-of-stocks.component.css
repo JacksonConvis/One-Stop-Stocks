@@ -1,0 +1,110 @@
+body {
+  background: linear-gradient(to bottom, gray, silver, white);
+  font-family: Arial, sans-serif;
+}
+
+.stock-details {
+  /* ... */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh; /* adjust as needed */
+  color: green;
+  
+}
+
+
+.stock-details h2 {
+  color: orange;
+  margin-top: 0;
+  align-content: center;
+}
+
+.stock-details p {
+  margin: 10px 0;
+ 
+}
+
+.stock-details p strong {
+  font-weight: bold;
+  color: black;
+}
+
+.hottest-stocks {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.hottest-stocks h3 {
+  color: orange;
+  margin-top: 0;
+}
+
+.hottest-stocks ul {
+  overflow-y: scroll;
+  list-style: none;
+  padding: 0;
+}
+
+.hottest-stocks li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background: linear-gradient(to bottom, gray, silver, white);
+}
+
+.hottest-stocks li:hover {
+  background-color: orange;
+}
+
+.ticker {
+  color: rgb(2, 150, 2);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+ul {
+  
+  height: 600px;
+  overflow-y: scroll;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  /* background: linear-gradient(to bottom, gray, silver, white); */
+  list-style: none;
+  margin: 10px 0;
+  padding: 10px;
+
+  border-radius: 5px;
+}
+
+button {
+  width: 10%;
+  height: 40px;
+  margin: 10px auto;
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background: black;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: .2s ease-in;
+  cursor: pointer;
+}
+
+button:hover {
+  background: orange;
+}
