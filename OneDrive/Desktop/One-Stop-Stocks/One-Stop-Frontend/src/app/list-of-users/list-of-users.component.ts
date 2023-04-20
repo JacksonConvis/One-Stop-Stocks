@@ -34,11 +34,5 @@ export class ListOfUsersComponent {
     });
   }
 
-  deleteUser(user: User): void{
-
-    this.serv.removeUser(user).subscribe(() => 
-    this.loadUsers());
-    };
-
 
 }

@@ -15,7 +15,6 @@
                   <h3>Users Browsing Stocks</h3>
                   <li *ngFor="let u of users; let i = index">
                     ID:&nbsp; <span class="green">{{u.id}}&nbsp;</span> &nbsp;Username:&nbsp; <span class="green">{{u.username}}</span>
-                    <button type="deleteB" class="delete-button" (click)="deleteUser(u)">Delete</button>
                   </li>                  
 				</form>
 			</div>
