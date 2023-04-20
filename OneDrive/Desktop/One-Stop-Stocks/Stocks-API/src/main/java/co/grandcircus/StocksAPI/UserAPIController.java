@@ -29,6 +29,16 @@ public class	UserAPIController {
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.CREATED)
     public User create(@RequestBody User user) {
+    	
+    	List<User> users = repo.findAll(); 
+    	
+    	for(int i=0; i < users.size(); i++) {
+    		if(user.username.equalsIgnoreCase(users.get(i).username)) {
+    			user.id = users.get(i).id;
+    		}
+    	}
+    	
+    
         repo.save(user);
         return user;
     }
