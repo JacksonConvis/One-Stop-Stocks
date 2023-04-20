@@ -11,6 +11,7 @@
     <h3>Your Favorite's List</h3>
     <ul>
       <li *ngFor="let f of faves; let i = index">
+        <span class="stock-number">{{i + 1 }}&nbsp;</span>
         <span class="ticker">{{f.ticker}}</span>
         <button (click)="deleteFave(f)">Delete Favorites</button> 
         <button (click)="showDetails(i)">Show Details</button>

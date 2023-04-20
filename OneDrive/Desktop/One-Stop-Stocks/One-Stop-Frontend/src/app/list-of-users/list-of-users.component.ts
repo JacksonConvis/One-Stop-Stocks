@@ -19,7 +19,7 @@ export class ListOfUsersComponent {
     this.loadUsers();
   }
 
-
+  onSubmit() {}
   
   updateUser(user: User){
     this.serv.addUser(user).subscribe(() => {
@@ -34,7 +34,11 @@ export class ListOfUsersComponent {
     });
   }
 
+  deleteUser(user: User): void{
 
+    this.serv.removeUser(user).subscribe(() => 
+    this.loadUsers());
+    };
 
 
 }
