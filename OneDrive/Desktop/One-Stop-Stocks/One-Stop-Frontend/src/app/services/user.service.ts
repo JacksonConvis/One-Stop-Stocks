@@ -27,6 +27,9 @@ export class UserService {
     return this.http.post<User>(`${this.loginURL}`, user);
   };
 
+  removeUser(user: User): Observable<void> {
+    return this.http.delete<void>(`${this.userURL}/${user}`);
+  };
   
 
 }

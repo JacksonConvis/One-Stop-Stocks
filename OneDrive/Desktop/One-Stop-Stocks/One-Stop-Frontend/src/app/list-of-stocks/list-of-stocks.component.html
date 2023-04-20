@@ -11,6 +11,7 @@
     <h3>50 Hottest Stocks Updated Daily</h3>
     <ul>
       <li *ngFor="let s of stocks; let i = index">
+        <span class="stock-number">{{i + 1 }}&nbsp;</span>
         <span class="ticker">{{s.ticker}}</span>
         <button (click)="makeFavorite(s, fave)">Mark as Favorite</button> 
         <button (click)="showDetails(i)">Show Details</button>

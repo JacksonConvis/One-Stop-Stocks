@@ -15,7 +15,7 @@ export class StockAPIService {
   faveURL: string = this.Url + "/favorites";
   yesterdayURL: string = this.Url +"/stocks/yesterday";
   lastWeekURL: string = this.Url +"/stocks/lastweek";
-
+  userUrl: string = this.Url +"/user-list";
   constructor(private http: HttpClient) {}
 
   getAllStocks(): Observable<Stock[]> {
@@ -43,4 +43,7 @@ export class StockAPIService {
     return this.http.delete<void>(`${this.faveURL}/${ticker}`);
   };
 
+  removeUser(id: BigInteger): Observable<void> {
+    return this.http.delete<void>(`${this['userURL']}/${id}`);
+  };
 }

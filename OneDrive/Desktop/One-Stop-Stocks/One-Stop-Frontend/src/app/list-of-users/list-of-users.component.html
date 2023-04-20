@@ -1,15 +1,38 @@
-<h3>Users Browsing Stocks</h3>
-<li *ngFor="let u of users; let i = index">
-  Id: {{u.id}} Username: {{u.username}}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
 
-  </li>
+			<div class="signup">
+        <div class="hottest-stocks">
+				
+                <form (ngSubmit)="onSubmit()">
+                  <h3>Users Browsing Stocks</h3>
+                  <li *ngFor="let u of users; let i = index">
+                    ID:&nbsp; <span class="green">{{u.id}}&nbsp;</span> &nbsp;Username:&nbsp; <span class="green">{{u.username}}</span>
+                    <button type="deleteB" class="delete-button" (click)="deleteUser(u)">Delete</button>
+                  </li>                  
+				</form>
+			</div>
+      </div>
 
-<h3>Misspelled Something? Update your information down below!</h3>
-
-  <form (ngSubmit)="updateUser(UserOne)">
-    <input type="number" name="id" placeholder="id" [(ngModel)]="UserOne.id">
-    <input type="text" name="username" placeholder="Username" required="" [(ngModel)]="UserOne.username">
-    <input type="password" name="description" placeholder="Password" required="" [(ngModel)]="UserOne.password">
-    <input type="password" name="pswd" placeholder="Confirm Password" required="">
-    <button type="submit">Update Credentials</button>
-</form>
+			<div class="login">
+				
+          <form (ngSubmit)="updateUser(UserOne)">
+            <label for="chk" aria-hidden="true">Update a User</label>
+            <input type="number" name="id" placeholder="id" [(ngModel)]="UserOne.id">
+            <input type="text" name="username" placeholder="Username" required="" [(ngModel)]="UserOne.username">
+            <input type="password" name="description" placeholder="Password" required="" [(ngModel)]="UserOne.password">
+            <input type="password" name="pswd" placeholder="Confirm Password" required="">
+            <button type="submit">Update Credentials</button>
+        </form>
+				
+			</div>
+	</div>
+</body>
+</html>
