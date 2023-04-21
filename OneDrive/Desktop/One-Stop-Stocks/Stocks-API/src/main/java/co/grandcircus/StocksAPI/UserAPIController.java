@@ -35,11 +35,16 @@ public class	UserAPIController {
     	for(int i=0; i < users.size(); i++) {
     		if(user.username.equalsIgnoreCase(users.get(i).username)) {
     			user.id = users.get(i).id;
+    			
     		}
     	}
     	
+    	if(user.username.isBlank()) {
+    		//don't save
+    	}else {
+    		repo.save(user);
+    	}
     
-        repo.save(user);
         return user;
     }
 }
