@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { User } from '../interfaces/user';
@@ -8,7 +8,7 @@ import { User } from '../interfaces/user';
   templateUrl: './list-of-users.component.html',
   styleUrls: ['./list-of-users.component.css']
 })
-export class ListOfUsersComponent {
+export class ListOfUsersComponent implements OnInit{
 
   users: User[] = [];
   UserOne: User = { username: "", password: ""} as any as User;
@@ -23,7 +23,7 @@ export class ListOfUsersComponent {
   
   updateUser(user: User){
     this.serv.addUser(user).subscribe(() => {
-     this.loadUsers
+     this.loadUsers();
     });
 
   }
