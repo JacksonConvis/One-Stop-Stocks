@@ -89,7 +89,7 @@ button:hover{
 	transform: scale(.6);
 }
 .hottest-stocks {
-    height: 580px;
+    height: 375px;
     overflow-y: scroll;
     background-color: #fff;
     border-radius: 10px;
