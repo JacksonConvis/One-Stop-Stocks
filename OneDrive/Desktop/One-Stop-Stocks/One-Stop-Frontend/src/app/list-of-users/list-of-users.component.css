@@ -98,15 +98,13 @@ button:hover{
   }
   
   .hottest-stocks h3 {
-    height: 20px;
-    overflow-y: scroll;
     color: orange;
     margin-top: 0;
   }
   
   .hottest-stocks ul {
-    height: 20px;
-    overflow-y: scroll;
+    /* height: 20px;
+    overflow-y: scroll; */
     list-style: none;
     padding: 0;
   }
