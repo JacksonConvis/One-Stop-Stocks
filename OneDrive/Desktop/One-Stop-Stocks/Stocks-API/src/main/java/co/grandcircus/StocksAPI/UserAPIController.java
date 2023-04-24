@@ -22,10 +22,6 @@ public class	UserAPIController {
     @Autowired
     private UserRepository repo;
     
-	@RequestMapping("/")
-	public String root() {
-		return "ok";
-	}
 
 
     @GetMapping("/users")
