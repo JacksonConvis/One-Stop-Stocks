@@ -11,16 +11,16 @@ import org.springframework.web.client.RestTemplate;
 public class StockService {
 
 	private RestTemplate template = new RestTemplate();
-	LocalDate today = java.time.LocalDate.now();
+	LocalDate today = java.time.LocalDate.now().minusDays(14);
 	
-	LocalDate yesterday = today.minusDays(1);
+	LocalDate yesterday = today.minusDays(15);
 	
-	LocalDate lastWeek = today.minusWeeks(1);
+	LocalDate lastWeek = today.minusWeeks(3);
 	
 
 	public Stock[] getStocks() {
 
-		String url = "https://tradestie.com/api/v1/apps/reddit?date=" + today;
+		String url = "https://tradestie.com/api/v1/apps/reddit?date=" + lastWeek;
 
 		Stock[] response = template.getForObject(url, Stock[].class);
 

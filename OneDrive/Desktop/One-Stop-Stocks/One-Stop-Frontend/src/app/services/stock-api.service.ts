@@ -9,7 +9,7 @@ import { Favorite } from '../interfaces/favorite';
 })
 export class StockAPIService {
   [x: string]: any;
-  Url: string = "http://localhost:8080";
+  Url: string = "https://d3ig2x71udyjst.cloudfront.net";
   // ^ this points to spring boot api backend
   stockURL: string = this.Url + "/stocks";
   faveURL: string = this.Url + "/favorites";

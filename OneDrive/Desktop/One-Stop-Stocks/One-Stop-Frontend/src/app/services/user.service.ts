@@ -10,7 +10,7 @@ import { User } from '../interfaces/user';
 })
 export class UserService {
   [x: string]: any;
-  Url: string = "http://localhost:8080";
+  Url: string = "https://d3ig2x71udyjst.cloudfront.net";
   // ^ this points to spring boot api backend
   loginURL: string = this.Url + "/login";
   userURL: string = this.Url + "/users";
